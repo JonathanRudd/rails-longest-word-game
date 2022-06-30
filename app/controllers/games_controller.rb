@@ -43,7 +43,7 @@ class GamesController < ApplicationController
   def check_translation(word)
     response = URI.open("https://wagon-dictionary.herokuapp.com/#{word.downcase}")
     json = JSON.parse(response.read.to_s)
-    json["found"]
+    json['found']
     # want to retrieve the value of the found key (either true or false
   end
 end
