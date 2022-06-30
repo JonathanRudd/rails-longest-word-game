@@ -1,0 +1,14 @@
+<h1>Score</h1>
+
+<%= params[:letters] %>
+
+<ul>
+  <li>Attempt: <%= @attempt%></li>
+  <li>Translation: <%= @result[:translation]%></li>
+  <li>Message: <%= @result[:message]%></li>
+  <li>Score: <%= @result[:score]%></li>
+</ul>
+
+
+
+<%= link_to "NewGame", "new"  %>
