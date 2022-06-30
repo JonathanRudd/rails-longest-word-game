@@ -21,7 +21,7 @@ class GamesController < ApplicationController
 
   def run_game(attempt, grid)
     result = {}
-    result[:translation] = check_translation(attempt)
+    result[:translation] = check_translation(attempt) ? "It's real!" : 'Not a real word!'
     result[:message] = result_message(attempt, result[:translation], grid)
     result # why do I need to return result here?
   end
@@ -31,7 +31,7 @@ class GamesController < ApplicationController
   def result_message(attempt, translation, grid)
     if translation
       if included?(attempt.upcase, grid)
-        ["Congratulations! #{attempt} is a valid English word!"]
+        ["#{attempt} can be made from #{grid}"]
       else
         ["Sorry but #{attempt} can't be build out of #{grid} "]
       end
